@@ -19,6 +19,7 @@ package org.springframework.samples.petclinic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportRuntimeHints;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 /**
  * PetClinic Spring Boot Application.
@@ -28,6 +29,7 @@ import org.springframework.context.annotation.ImportRuntimeHints;
  */
 @SpringBootApplication
 @ImportRuntimeHints(PetClinicRuntimeHints.class)
+@EnableWebSecurity
 public class PetClinicApplication {
 
 	public static void main(String[] args) {
