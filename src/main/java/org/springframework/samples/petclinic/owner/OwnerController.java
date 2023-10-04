@@ -157,4 +157,10 @@ class OwnerController {
 		return mav;
 	}
 
+	@GetMapping("/findOwner/{firstName}")
+	public ModelAndView findOwner(@PathVariable String firstName) {
+		ModelAndView mav = new ModelAndView("/findOwner");
+		Owner owner = owners.findByLastName(firstName).orElseThrow();
+		return mav;
+	}
 }
