@@ -18,7 +18,9 @@ package org.springframework.samples.petclinic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.ImportRuntimeHints;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 /**
@@ -36,4 +38,8 @@ public class PetClinicApplication {
 		SpringApplication.run(PetClinicApplication.class, args);
 	}
 
+	@EventListener(value = ApplicationContextAware.class)
+	public void doSomething() {
+		//do something
+	}
 }
