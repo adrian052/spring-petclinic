@@ -47,7 +47,10 @@ class CacheConfiguration {
 	 * mechanism that is provided by the selected JCache implementation.
 	 */
 	private javax.cache.configuration.Configuration<Object, Object> cacheConfiguration() {
-		return new MutableConfiguration<>().setStatisticsEnabled(true);
+		return new MutableConfiguration<>()
+			.setStatisticsEnabled(true)
+			.setReadThrough(false)
+			.setStoreByValue(true);
 	}
 
 }
